@@ -7,7 +7,7 @@ public class Item {
 
     public Item(int key,String value) {
         this.key = key;
-        this.value = null;
+        this.value = value;
         this.right = null;
         this.left = null;
     }

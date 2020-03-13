@@ -21,15 +21,15 @@ public class Tree {
                     head.left = item;
                     size++;
                 } else if (item.key > head.key)
-                    AddToLeft(head.left, item);
-                else if (item.key < head.key) {
                     AddToRight(head.right, item);
-                }
-
-
+                else
+                    AddToLeft(head.left, item);
             }
+
+
         }
     }
+
 
     public void AddToLeft(Item left, Item item) {
         if ((item.key > left.key) && (left.right == null)) {
@@ -49,9 +49,8 @@ public class Tree {
         } else if ((item.key < right.key) && (right.left == null)) {
             right.left = item;
             size++;
-        } else if (item.key > right.key) {
-            AddToRight(right.right, item);
-        } else if (item.key < right.key) AddToLeft(right.left, item);
+        } else if (item.key > right.key) AddToRight(right.right, item);
+        else if (item.key < right.key) AddToLeft(right.left, item);
     }
 
 
