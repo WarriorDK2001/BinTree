@@ -47,7 +47,7 @@ public class Tree {
         }
     }
 
-    public String get(int key) {
+    public int get(int key) {
         if (size > 0) {
             if (head.key == key) {
                 return head.value;
@@ -56,11 +56,11 @@ public class Tree {
             } else
                 return getLeft(key, head.left);
         }
-        return "";
+        return 0;
     }
 
 
-    public String getRight(int key, Item right) {
+    public int getRight(int key, Item right) {
         if (key == right.key) {
             return right.value;
         } else if (right.key < key) {
@@ -69,7 +69,7 @@ public class Tree {
             return getLeft(key, right.left);
     }
 
-    public String getLeft(int key, Item left) {
+    public int getLeft(int key, Item left) {
         if (key == left.key) {
             return left.value;
         } else if (left.key < key) {
