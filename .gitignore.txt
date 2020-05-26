@@ -1,3 +1,4 @@
 /out
 /target
-*/META-INF/*
+#Ignore META-INF
+META-INF
