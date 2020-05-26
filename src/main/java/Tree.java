@@ -20,6 +20,50 @@ public class Tree {
         }
     }
 
+    public void DeleteFromTree(int key) {
+        if (size > 0) {
+            if (head.key == key) {
+                Delete(key, head);
+            } else if (head.key < key) {
+                FindRightDeleteElement(key, head.right);
+            } else
+                FindLeftDeleteElement(key, head.left);
+        }
+    }
+
+    public void Delete(int key, Item item) {
+        if ((item.right == null) && (item.left == null)) {
+            item = null;
+        } else if (item.right == null) {
+            item = item.left;
+        } else if (item.right.left == null) {
+            item = item.right;
+        } else FindAndDelete(item.right.left, item);
+    }
+
+    public void FindAndDelete(Item left, Item element) {
+        if (left.left == null) {
+            element = left;
+        } else FindAndDelete(left.left, element);
+    }
+
+    public void FindRightDeleteElement(int key, Item right) {
+        if (key == right.key) {
+            Delete(key, right);
+        } else if (right.key < key) {
+            FindRightDeleteElement(key, right.right);
+        } else
+            FindLeftDeleteElement(key, right.left);
+    }
+
+    public void FindLeftDeleteElement(int key, Item left) {
+        if (key == left.key) {
+            Delete(key,left);
+        } else if (left.key < key) {
+            FindRightDeleteElement(key, left.right);
+        } else
+            FindLeftDeleteElement(key, left.left);
+    }
 
     public void AddToLeft(Item left, Item item) {
         if ((item.key > left.key) && (left.right == null)) {
