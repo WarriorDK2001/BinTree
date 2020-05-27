@@ -19,11 +19,5 @@ public class Main {
         System.out.println(tree.get(5));
         System.out.println(tree.get(7));
 
-        tree.get(6);
-        tree.get(4);
-        tree.get(10);
-        tree.get(12);
-        tree.get(2);
-        tree.get(7);
     }
 }

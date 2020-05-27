@@ -1,7 +1,4 @@
 import org.junit.jupiter.api.Test;
-import sun.jvm.hotspot.utilities.Assert;
-
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
